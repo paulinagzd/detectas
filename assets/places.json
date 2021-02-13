@@ -1,0 +1,225 @@
+{
+    "predictions" : [
+       {
+          "description" : "Autism Learning Partners Portland, Southwest Barbur Boulevard, Portland, OR, USA",
+          "matched_substrings" : [
+             {
+                "length" : 6,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJubmrm4oLlVQRBN9yNVCpK2Y",
+          "reference" : "ChIJubmrm4oLlVQRBN9yNVCpK2Y",
+          "structured_formatting" : {
+             "main_text" : "Autism Learning Partners Portland",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 6,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Southwest Barbur Boulevard, Portland, OR, USA"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Autism Learning Partners Portland"
+             },
+             {
+                "offset" : 35,
+                "value" : "Southwest Barbur Boulevard"
+             },
+             {
+                "offset" : 63,
+                "value" : "Portland"
+             },
+             {
+                "offset" : 73,
+                "value" : "OR"
+             },
+             {
+                "offset" : 77,
+                "value" : "USA"
+             }
+          ],
+          "types" : [ "health", "point_of_interest", "establishment" ]
+       },
+       {
+          "description" : "Autism Spectrum Therapies, Northwest 169th Place, Beaverton, OR, USA",
+          "matched_substrings" : [
+             {
+                "length" : 6,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJ_eeIBNwOlVQRqiD87BVM1uU",
+          "reference" : "ChIJ_eeIBNwOlVQRqiD87BVM1uU",
+          "structured_formatting" : {
+             "main_text" : "Autism Spectrum Therapies",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 6,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Northwest 169th Place, Beaverton, OR, USA"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Autism Spectrum Therapies"
+             },
+             {
+                "offset" : 27,
+                "value" : "Northwest 169th Place"
+             },
+             {
+                "offset" : 50,
+                "value" : "Beaverton"
+             },
+             {
+                "offset" : 61,
+                "value" : "OR"
+             },
+             {
+                "offset" : 65,
+                "value" : "USA"
+             }
+          ],
+          "types" : [ "health", "point_of_interest", "establishment" ]
+       },
+       {
+          "description" : "Autism Society of Oregon, Southwest Barbur Boulevard, Portland, OR, USA",
+          "matched_substrings" : [
+             {
+                "length" : 6,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJQfBfnXB0lVQRazfWuROEr-U",
+          "reference" : "ChIJQfBfnXB0lVQRazfWuROEr-U",
+          "structured_formatting" : {
+             "main_text" : "Autism Society of Oregon",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 6,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Southwest Barbur Boulevard, Portland, OR, USA"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Autism Society of Oregon"
+             },
+             {
+                "offset" : 26,
+                "value" : "Southwest Barbur Boulevard"
+             },
+             {
+                "offset" : 54,
+                "value" : "Portland"
+             },
+             {
+                "offset" : 64,
+                "value" : "OR"
+             },
+             {
+                "offset" : 68,
+                "value" : "USA"
+             }
+          ],
+          "types" : [ "point_of_interest", "establishment" ]
+       },
+       {
+          "description" : "School of Autism Inc, Northeast Sandy Boulevard, Portland, OR, USA",
+          "matched_substrings" : [
+             {
+                "length" : 6,
+                "offset" : 10
+             }
+          ],
+          "place_id" : "ChIJwdpLFbqglVQRDqKVaXQgfgE",
+          "reference" : "ChIJwdpLFbqglVQRDqKVaXQgfgE",
+          "structured_formatting" : {
+             "main_text" : "School of Autism Inc",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 6,
+                   "offset" : 10
+                }
+             ],
+             "secondary_text" : "Northeast Sandy Boulevard, Portland, OR, USA"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "School of Autism Inc"
+             },
+             {
+                "offset" : 22,
+                "value" : "Northeast Sandy Boulevard"
+             },
+             {
+                "offset" : 49,
+                "value" : "Portland"
+             },
+             {
+                "offset" : 59,
+                "value" : "OR"
+             },
+             {
+                "offset" : 63,
+                "value" : "USA"
+             }
+          ],
+          "types" : [ "school", "point_of_interest", "establishment" ]
+       },
+       {
+          "description" : "Autism Service Dogs of America, North Interstate Avenue, Portland, OR, USA",
+          "matched_substrings" : [
+             {
+                "length" : 6,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJCyxoLHOnlVQRHNfSHF3XCek",
+          "reference" : "ChIJCyxoLHOnlVQRHNfSHF3XCek",
+          "structured_formatting" : {
+             "main_text" : "Autism Service Dogs of America",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 6,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "North Interstate Avenue, Portland, OR, USA"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Autism Service Dogs of America"
+             },
+             {
+                "offset" : 32,
+                "value" : "North Interstate Avenue"
+             },
+             {
+                "offset" : 57,
+                "value" : "Portland"
+             },
+             {
+                "offset" : 67,
+                "value" : "OR"
+             },
+             {
+                "offset" : 71,
+                "value" : "USA"
+             }
+          ],
+          "types" : [ "point_of_interest", "establishment" ]
+       }
+    ],
+    "status" : "OK"
+ }
