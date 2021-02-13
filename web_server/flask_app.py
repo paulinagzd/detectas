@@ -18,13 +18,16 @@ def get_multiply10(num):
 # curl -F "file=@image.jpg" http://localhost:5000/
 @app.route("/classify_image", methods=["POST"])
 def classify_image():
+
 	# TODO: add a try catch block here
-    img = Image.open(request.files['file'])
-    # print(img.size)
-    numpy_img = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
-    print(numpy_img.shape)
-    print(numpy_img)
+
+    # img = Image.open(request.files["file"])
+    # # print(img.size)
+    # numpy_img = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
+    # print(numpy_img.shape)
+    # print(numpy_img)
     # classes = {0: "autistic", 1: "non_autistic", -1: "error_read_description"}
+    print(request.files)
     return jsonify({"route": f"/classify_image", "method": "POST", "class": -1, "description": "Can't find face. Please recapture the image"})
 
 if __name__ == "__main__":
