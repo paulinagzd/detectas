@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/questions.dart';
-import 'nextInstructions.dart';
 import '../components/body.dart';
 
 class QuizPage extends StatelessWidget {
@@ -21,55 +20,3 @@ class QuizPage extends StatelessWidget {
     );
   }
 }
-// Widget build(BuildContext context) {
-//   return Scaffold(
-//       appBar: new AppBar(
-//         backgroundColor: const Color(0xFF0099a9),
-//       ),
-//       body: new Padding(
-//           padding: new EdgeInsets.all(30.0),
-//           child: Column(children: <Widget>[
-//             Row(
-//               children: [
-//                 Column(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: <Widget>[
-//                     Text(
-//                       Constants.Question1.text,
-//                       maxLines: 7,
-//                     ),
-//                     ElevatedButton(
-//                       onPressed: () {
-//                         Navigator.push(
-//                           context,
-//                           MaterialPageRoute(
-//                               builder: (context) => NextStepsPage()),
-//                         );
-//                       },
-//                       child: Text('Take quiz!'),
-//                     ),
-//                   ],
-//                 ),
-//               ],
-//             ),
-//             Row(
-//               children: <Widget>[
-//                 ElevatedButton(
-//                   onPressed: () {
-//                     Navigator.push(
-//                       context,
-//                       MaterialPageRoute(
-//                           builder: (context) => NextStepsPage()),
-//                     );
-//                   },
-//                   child: Text('True'),
-//                 ),
-//                 ElevatedButton(
-//                   onPressed: () {
-//                     Navigator.pop(context);
-//                   },
-//                   child: Text('Go back!'),
-//                 ),
-//               ],
-//             )
-//           ])));

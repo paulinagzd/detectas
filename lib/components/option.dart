@@ -20,12 +20,15 @@ class Option extends StatelessWidget {
         builder: (qnController) {
           Color getColor() {
             if (qnController.isAnswered) {
-              if (index == qnController.trueIndex) {
-                return Colors.blue;
-              } else if (index == qnController.selectedAnswer &&
-                  qnController.selectedAnswer != qnController.trueIndex) {
+              if ((index == qnController.trueIndex) ^
+                  (qnController.selectedAnswer != qnController.trueIndex)) {
                 return Colors.blue;
               }
+
+              // else if (index == qnController.selectedAnswer &&
+              //     qnController.selectedAnswer != qnController.trueIndex) {
+              //   return Colors.blue;
+              // }
             }
             return Colors.grey;
           }

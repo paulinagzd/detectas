@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+
 import '../controllers/questions.dart';
+
 // import 'package:websafe_svg/websafe_svg.dart';
 
 class ProgressBar extends StatelessWidget {
@@ -20,34 +23,18 @@ class ProgressBar extends StatelessWidget {
       child: GetBuilder<QuestionController>(
         init: QuestionController(),
         builder: (controller) {
-          return Stack(
-            children: [
-              // LayoutBuilder provide us the available space for the conatiner
-              // constraints.maxWidth needed for our animation
-              LayoutBuilder(
-                builder: (context, constraints) => Container(
-                  // from 0 to 1 it takes 60s
-                  width: constraints.maxWidth,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0 / 2),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  ),
-                ),
-              ),
-            ],
-          );
+          return Center(
+              child: FAProgressBar(
+                  borderRadius: 40,
+                  direction: Axis.horizontal,
+                  maxValue: 100,
+                  currentValue:
+                      (controller.questionNumber.value * 100 / 6).round(),
+                  progressColor: Colors.blue,
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 0.1,
+                  )));
         },
       ),
     );

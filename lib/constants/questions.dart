@@ -33,7 +33,7 @@ const List m_chat_questions = [
   {
     "id": 4,
     "question":
-        "Does your child make unusualfinger movements near his or her eyes?",
+        "Does your child make unusual finger movements near his or her eyes?",
     "options": answers,
   },
   {
