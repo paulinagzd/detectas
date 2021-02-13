@@ -24,6 +24,13 @@ class _MyAppState extends State<MyApp> {
       for (final office in jsonResponse['predictions']) {
         final marker = Marker(
           markerId: MarkerId(office['placeID'].toString()),
+          
+          // The position below is wrong, LatLng should be taking in an input from office,
+          // but the JSON(linked at top) doesn't provide any coordinates, and I don't think 
+          // position takes addressess. So all of the locations are showing up in the same spot.
+          // Documentation says the placeID can provide the coords, but I can't figure it out
+          // would be much easier if they hadn't deprecated the data fields ://
+          // https://developers.google.com/places/web-service/overview
           position: LatLng(45.521563, -122.677433),
           infoWindow: InfoWindow(
             title: office['description'],
