@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request
+import PIL
 from PIL import Image
 import numpy as np
+import ml_model.get_pred as get_pred
 
 app = Flask(__name__)
 
@@ -18,17 +20,20 @@ def get_multiply10(num):
 # curl -F "file=@image.jpg" http://localhost:5000/
 @app.route("/classify_image", methods=["POST"])
 def classify_image():
-
-	# TODO: add a try catch block here
-
-    # img = Image.open(request.files["file"])
-    # # print(img.size)
-    # numpy_img = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
-    # print(numpy_img.shape)
-    # print(numpy_img)
+    c = -1
+    desc = ""
+    try:
+        img = Image.open(request.files["file"])
+        c = get_pred.give_prediction(img)
+        if c == -1:
+            desc = "Can't find face. Please retake the image"
+    except PIL.UnidentifiedImageError:
+        desc = "Cannot identify image file. Format not supported"
+    except:
+        desc = "Something else went wrong"
     # classes = {0: "autistic", 1: "non_autistic", -1: "error_read_description"}
-    print(request.files)
-    return jsonify({"route": f"/classify_image", "method": "POST", "class": -1, "description": "Can't find face. Please recapture the image"})
+    return jsonify({"route": f"/classify_image", "method": "POST", "class": int(c), "description": desc})
 
 if __name__ == "__main__":
+    get_pred.load_model_from_path("ml_model/facial_model.h5",print_summary=False)
     app.run(debug=True)
