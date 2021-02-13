@@ -22,6 +22,12 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _markers.clear();
       for (final office in jsonResponse['predictions']) {
+        
+        // -----Below code trying geolocation, trouble b/c of await inside asynchronous func
+        // String query = office['secondary_text'];
+        // var addr = await Geocoder.local.findAddressesFromQuery(query);
+        // var address = addr.first;
+        
         final marker = Marker(
           markerId: MarkerId(office['placeID'].toString()),
           
@@ -32,6 +38,8 @@ class _MyAppState extends State<MyApp> {
           // would be much easier if they hadn't deprecated the data fields ://
           // https://developers.google.com/places/web-service/overview
           position: LatLng(45.521563, -122.677433),
+          // Below address for geocoder
+          //position: LatLng(address.coordinates.latitude, address.coordinates.longitude),
           infoWindow: InfoWindow(
             title: office['description'],
             snippet: office['secondary_text'],
