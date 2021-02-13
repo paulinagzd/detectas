@@ -45,9 +45,8 @@ validation_generator = test_datagen.flow_from_directory(
     batch_size=batch_size,
     class_mode='binary')
 
-from keras.applications.resnet50 import ResNet50
+#from keras.applications.vgg19 import VGG19
 
-"""
 model = Sequential()
 print(type(model))
 
@@ -76,10 +75,10 @@ model.compile(
         loss='binary_crossentropy',
         optimizer='rmsprop',
         metrics=['accuracy'])
-"""
 
+"""
 # load model without classifier layers
-model = ResNet50(include_top=False, input_shape=(img_width, img_height, 3))
+model = VGG19(include_top=False, input_shape=(img_width, img_height, 3))
 # add new classifier layers
 flat1 = Flatten()(model.layers[-1].output)
 class1 = Dense(1024, activation='relu')(flat1)
@@ -93,6 +92,7 @@ model.compile(
         loss='binary_crossentropy',
         optimizer='rmsprop',
         metrics=['accuracy'])
+"""
         
 model.fit(
     train_generator,
@@ -104,5 +104,5 @@ model.fit(
 loss, accuracy = model.evaluate(validation_generator)
 print("Test: accuracy = %f  ;  loss = %f " % (accuracy, loss))
 
-model.save("facial_model_resnet.h5")
+model.save("facial_model.h5")
 print("Saved model to disk")
