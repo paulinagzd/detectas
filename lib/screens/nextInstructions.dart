@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'cameraScreen.dart';
 
 class NextStepsPage extends StatelessWidget {
-
   List<int> selectedAnswersList;
   NextStepsPage(this.selectedAnswersList);
 
@@ -22,7 +21,7 @@ class NextStepsPage extends StatelessWidget {
     final welcome = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Next steps!',
+        'Next steps',
         style: TextStyle(fontSize: 28.0, color: Colors.black),
       ),
     );
@@ -30,7 +29,7 @@ class NextStepsPage extends StatelessWidget {
     final description = Padding(
       padding: EdgeInsets.all(12.0),
       child: Text(
-        "Now that the quiz has been answered, a picture of the candidate's face is required to continue.",
+        "Now that the quiz has been answered, a picture of the candidate's face is required to continue. It will identify possible autistic traits on children from 2 to 8 years old.",
         style: TextStyle(fontSize: 16.0, color: Colors.black54),
       ),
     );
@@ -57,7 +56,9 @@ class NextStepsPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CameraScreen(selectedAnswersList)),
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            CameraScreen(selectedAnswersList)),
                   );
                 },
                 child: Text('Take photo', style: TextStyle(fontSize: 28.0)),

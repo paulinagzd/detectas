@@ -27,7 +27,7 @@ class IntroQuizRoute extends StatelessWidget {
     final description = Padding(
       padding: EdgeInsets.all(12.0),
       child: Text(
-        "The first step is answering a set of question's based on the child's behavior.",
+        "The first step is answering the initial M-CHAT™ screening. This helps reduce the false positive rate, keep in mind that this is not a diagnosis.",
         style: TextStyle(fontSize: 16.0, color: Colors.black54),
       ),
     );
