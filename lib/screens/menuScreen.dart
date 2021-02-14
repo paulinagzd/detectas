@@ -5,55 +5,84 @@ import 'about.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
+    final hero = Hero(
+      tag: 'hero',
+      child: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Container(
+          child: new Image.asset('assets/images/detectAS.png'),
+          alignment: Alignment.center,
+        ),
       ),
-      body: new Padding(
-        padding: new EdgeInsets.all(30.0),
+    );
+
+    final buttonRow = (Padding(
+      padding: EdgeInsets.all(8),
+      child: SizedBox(
+        width: double.infinity,
         child: Column(
-          children: <Widget>[
-            Row(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ElevatedButton(
-                      child: Text('Take quiz'),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => IntroQuizRoute()),
-                        );
-                      },
-                    ),
-                  ],
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: 70.0,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white, // background
+                  onPrimary: Colors.blue, // foreground
                 ),
-              ],
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => IntroQuizRoute()),
+                  );
+                },
+                child: Text('Take quiz', style: TextStyle(fontSize: 28.0)),
+              ),
             ),
-            Row(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ElevatedButton(
-                      child: Text('About the app'),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AboutScreen()),
-                        );
-                      },
-                    ),
-                  ],
+            SizedBox(
+              width: double.infinity,
+              height: 10.0,
+            ),
+            SizedBox(
+              width: double.infinity,
+              height: 70.0,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white, // background
+                  onPrimary: Colors.blue, // foreground
                 ),
-              ],
-            ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AboutScreen()),
+                  );
+                },
+                child: Text('About', style: TextStyle(fontSize: 28.0)),
+              ),
+            )
           ],
         ),
       ),
+    ));
+
+    final body = Container(
+      width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.all(12.0),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [
+          Colors.white,
+          Colors.white,
+        ]),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[hero, buttonRow],
+      ),
+    );
+
+    return Center(
+      child: body,
     );
   }
 }

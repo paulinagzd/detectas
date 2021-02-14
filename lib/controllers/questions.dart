@@ -76,7 +76,6 @@ class QuestionController extends GetxController
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);
     } else {
-      // Get package provide us simple way to naviigate another page
       Get.to(NextStepsPage());
     }
   }
