@@ -14,7 +14,7 @@ class NextStepsPage extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         child: Container(
           alignment: Alignment.center,
-          child: new Image.asset('assets/images/after.png'),
+          child: new Image.asset('assets/images/selfie.png'),
         ),
       ),
     );

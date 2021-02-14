@@ -73,15 +73,13 @@ class _SpecialistsMapState extends State<SpecialistsMap> with AfterInitMixin<Spe
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.home_outlined),
-              tooltip: 'Next page',
+              tooltip: 'Go Home',
               onPressed: () {
-                // TODO: Go back to main scren
                 Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
-                // Navigator.popUntil(context, (route) => false);
               },
             ),
           ],
-          title: Text('Resources'),
+          title: Text('Specialists Near By'),
         ),
         body: (applicationBloc.currentLocation == null)
             ? Center(

@@ -10,7 +10,7 @@ class IntroQuizRoute extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Container(
-          child: new Image.asset('assets/images/intro.png'),
+          child: new Image.asset('assets/images/questions.png'),
           alignment: Alignment.center,
         ),
       ),

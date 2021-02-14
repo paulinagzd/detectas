@@ -1,9 +1,11 @@
 import 'package:detectas/utilities/get_autism_index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../main.dart';
 import '../src/blocs/appBloc.dart';
 import 'package:provider/provider.dart';
 
+import 'menuScreen.dart';
 import 'sMapScreen.dart';
 
 class Results extends StatelessWidget {
@@ -52,7 +54,7 @@ class Results extends StatelessWidget {
       ),
     );
 
-    final buttonRow = (Padding(
+    final buttons = (Padding(
       padding: EdgeInsets.all(12),
       child: SizedBox(
         width: double.infinity,
@@ -63,7 +65,7 @@ class Results extends StatelessWidget {
               width: double.infinity,
               height: 10.0,
             ),
-            SizedBox(
+            showRecommendations ? SizedBox(
               width: double.infinity,
               height: 70.0,
               child: ElevatedButton(
@@ -77,16 +79,28 @@ class Results extends StatelessWidget {
                     MaterialPageRoute(builder: (context) {
                       return ChangeNotifierProvider(
                         create: (context) => ApplicationBloc(),
-                        child: MaterialApp(
-                          debugShowCheckedModeBanner: false,
-                          title: 'Recommendations',
-                          home: SpecialistsMap(),
+                        child: SpecialistsMap(
                         ),
                       );
                     }),
                   );
                 },
-                child: Text('Recommendations', style: TextStyle(fontSize: 28.0)),
+                child: Text('Specialists Recommendations', style: TextStyle(fontSize: 20.0)),
+              ),
+            ) : Container(),
+            SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              height: 70.0,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white, // background
+                  onPrimary: Colors.blue, // foreground
+                ),
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
+                },
+                child: Text('Go Home', style: TextStyle(fontSize: 20.0)),
               ),
             )
           ],
@@ -99,7 +113,7 @@ class Results extends StatelessWidget {
       padding: EdgeInsets.all(12.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[circle, welcome, description, showRecommendations ? buttonRow : Container()],
+        children: <Widget>[circle, welcome, description, buttons],
       ),
     );
 
