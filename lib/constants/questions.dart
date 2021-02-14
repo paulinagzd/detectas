@@ -42,60 +42,74 @@ const List m_chat_questions = [
         "Does your child point with one finger to ask for something or to get help?",
     "options": answers,
   },
-  // {
-  //   "id": 6,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 7,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 8,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 9,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 10,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 11,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 12,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 13,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 14,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 15,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 16,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 17,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 18,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
-  // {
-  //   "id": 19,
-  //   "question": "If you point at something across the room, does your child look at it?",
-  // },
+   {
+     "id": 6,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 7,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 8,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 9,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 10,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 11,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 12,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 13,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 14,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 15,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 16,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 17,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 18,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
+   {
+     "id": 19,
+     "question": "If you point at something across the room, does your child look at it?",
+     "options": answers,
+   },
 ];

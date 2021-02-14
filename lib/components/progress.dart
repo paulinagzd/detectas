@@ -29,7 +29,7 @@ class ProgressBar extends StatelessWidget {
                   direction: Axis.horizontal,
                   maxValue: 100,
                   currentValue:
-                      (controller.questionNumber.value * 100 / 6).round(),
+                      (controller.questionNumber.value * 100 / controller.questions.length).round(),
                   progressColor: Colors.blue,
                   border: Border.all(
                     color: Colors.grey,

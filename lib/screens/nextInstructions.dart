@@ -12,6 +12,7 @@ class NextStepsPage extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Container(
+          height: 200,
           alignment: Alignment.center,
           child: new Image.asset('assets/images/selfie.png'),
         ),
@@ -71,9 +72,8 @@ class NextStepsPage extends StatelessWidget {
 
     final body = Container(
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.all(12.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      padding: EdgeInsets.all(0.0),
+      child: ListView(
         children: <Widget>[circle, welcome, description, buttonRow],
       ),
     );
