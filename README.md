@@ -1,6 +1,6 @@
 # detectas
 <img src="https://user-images.githubusercontent.com/31121102/107885350-bb2eae00-6f1f-11eb-9c97-561127360fd9.png" width="200" />
-Our app provides an accessible tool for parents to determine if their child (of 2 to 8 years) shows autism and recommends them further resources if necessary.
+Our app provides an accessible tool for parents to determine if their child (of 2 to 8 years) shows signs of autism and recommends them further resources if necessary.
 
 ## Screenshots
 <table style="width:100%">
