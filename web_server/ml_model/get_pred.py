@@ -4,7 +4,9 @@ import numpy as np
 import sys
 import os
 from PIL import Image
+import cv2
 
+model = 1
 
 def load_model_from_path(model_path: str, print_summary:bool=False):
     global model
@@ -14,6 +16,31 @@ def load_model_from_path(model_path: str, print_summary:bool=False):
 
 # dimensions of our images.
 img_size = (150, 150) # width, height
+
+def detect_faces(img: Image) -> Image:
+    open_cv_image = np.array(img)
+    # Convert RGB to BGR
+    open_cv_image = open_cv_image[:, :, ::-1].copy()
+
+    gray = cv2.cvtColor(open_cv_image, cv2.COLOR_BGR2GRAY)
+
+    faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    faces = faceCascade.detectMultiScale(
+        gray,
+        scaleFactor=1.3,
+        minNeighbors=3,
+        minSize=(30, 30)
+    )
+
+    if len(faces) == 0:
+        # don't accept this image
+        return -1
+    else:
+        for (x, y, w, h) in faces:
+            cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            roi_color = img[y:y + h, x:x + w]
+            face_img = cv2.cvtColor(roi_color, cv2.COLOR_BGR2RGB)
+            return Image.fromarray(face_img)
 
 def resize_image_square(image: Image, size: (int, int)) -> Image:
     (w0, h0) = size
@@ -37,8 +64,14 @@ def resize_image_square(image: Image, size: (int, int)) -> Image:
         resized_image = resized_image.crop(box=(0, required_loss / 2, w0, resized_image.size[1] - required_loss / 2))
         return resized_image
 
-def give_prediction(img: Image) -> int:
+def give_prediction(img: Image, model_path) -> int:
+    if model == 1:
+        load_model_from_path(model_path,print_summary=True)
     # img.thumbnail((img_width, img_height), Image.ANTIALIAS) # resizing image while maintaining aspect ratio
+    img = detect_faces(img)
+    if img == -1:
+        print(f"no face detected")
+        return -1
     img = resize_image_square(img, img_size)
     img = img.convert('RGB') # we might get PNG which has value 4 in 3rd dim. So, need to make sure we convert it to jpg to just 3 layers first
     print(img.size)
@@ -52,4 +85,4 @@ def give_prediction(img: Image) -> int:
         return preds[0][0]
     else:
         print(f"error in server: could not convert image to {img_size}")
-        return -1
+        return 2
