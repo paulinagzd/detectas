@@ -14,7 +14,7 @@ class AboutScreen extends StatelessWidget {
     final description = Padding(
       padding: EdgeInsets.all(12.0),
       child: Text(
-        "This app helps detect signs of autism in children.",
+        "Is my child autistic? Approximately 25% of children who have autism go undiagnosed (Preidt, D, 2020). In an age where technology should innovate accessible healthcare, DetectAS is the first step before risking a large medical bill. The questionnaire part consists on the Modified Checklist for Autism in Toddlers (M-CHAT™; Robins, Fein, & Barton, 1999), which is largely used by specialists. The facial recognition part uses Convolutional Neural Networks trained to identify possible autistic traits on children from 2 to 8 years old, such as lack of eye contact or emotion. As a disclaimer, we’re not qualified to diagnose a child, but DetectAS applies technology and valuable research in providing an assessment and resources",
         style: TextStyle(fontSize: 16.0, color: Colors.black54),
       ),
     );
