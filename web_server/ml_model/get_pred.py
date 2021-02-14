@@ -37,8 +37,8 @@ def detect_faces(img: Image) -> Image:
         return -1
     else:
         for (x, y, w, h) in faces:
-            cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            roi_color = img[y:y + h, x:x + w]
+            cv2.rectangle(open_cv_image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            roi_color = open_cv_image[y:y + h, x:x + w]
             face_img = cv2.cvtColor(roi_color, cv2.COLOR_BGR2RGB)
             return Image.fromarray(face_img)
 

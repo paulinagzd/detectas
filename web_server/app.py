@@ -27,7 +27,7 @@ def classify_image():
     c = -1
     desc = ""
     # img = Image.open(request.files["file"])
-    # c = get_pred.give_prediction(img)
+    # c = get_pred.give_prediction(img, "ml_model/facial_model.h5")
     # if c == -1:
     #     desc = "Can't find face. Please retake the image"	
 

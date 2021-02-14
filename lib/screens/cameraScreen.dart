@@ -155,25 +155,28 @@ class _CameraScreenState extends State<CameraScreen> {
 //                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
 //                ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
                   child: Center(child: Text(description)),
                 ),
-                RaisedButton(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                  child: Text(predictedClass == -1 ? "Predict results without taking image" : "Next", style: TextStyle(fontSize: 16),),
-                  textColor: Colors.white,
-                  color: Theme
-                      .of(context)
-                      .accentColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(50.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                  child: RaisedButton(
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    child: Text(predictedClass == -1 ? "Predict results without taking image" : "Next", style: TextStyle(fontSize: 16),),
+                    textColor: Colors.white,
+                    color: Theme
+                        .of(context)
+                        .accentColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(50.0),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Results(widget.selectedAnswersList, predictedClass)),
+                      );
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Results(widget.selectedAnswersList, predictedClass)),
-                    );
-                  },
                 ),
               ],
             ),

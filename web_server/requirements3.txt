@@ -204,3 +204,5 @@ urllib3==1.26.3
 Werkzeug==1.0.1
 wrapt==1.12.1
 zipp==3.4.0
+
+opencv-python-headless==4.5.1.48

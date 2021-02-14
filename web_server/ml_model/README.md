@@ -1,2 +1,3 @@
 # Facial-detection-of-Autism
-This project aims to develop a machine learning model to perform autism detection based on facial images for children aged 2-8 years.
+This project aims to develop a machine learning model to perform autism detection based on facial images for children aged 2-8 years.  
+We used Tensorflow to implement a Convolutional Neural Network and trained the model on data obtained from kaggle (Dataset). We then trained our model on the 2536 train images in this dataset and were able to achieve 87.6% accuracy on the 400 test images.

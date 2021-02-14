@@ -3,6 +3,7 @@ import 'cameraScreen.dart';
 
 class NextStepsPage extends StatelessWidget {
   List<int> selectedAnswersList;
+
   NextStepsPage(this.selectedAnswersList);
 
   @override
@@ -57,9 +58,7 @@ class NextStepsPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            CameraScreen(selectedAnswersList)),
+                    MaterialPageRoute(builder: (context) => CameraScreen(selectedAnswersList)),
                   );
                 },
                 child: Text('Take photo', style: TextStyle(fontSize: 28.0)),
@@ -74,7 +73,12 @@ class NextStepsPage extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(0.0),
       child: ListView(
-        children: <Widget>[circle, welcome, description, buttonRow],
+        children: <Widget>[
+          Padding(padding: const EdgeInsets.all(8.0), child: circle),
+          Padding(padding: const EdgeInsets.all(8.0), child: welcome),
+          Padding(padding: const EdgeInsets.all(8.0), child: description),
+          Container(padding: const EdgeInsets.all(8.0), child: buttonRow),
+        ],
       ),
     );
 

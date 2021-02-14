@@ -20,4 +20,4 @@ tensorflow==2.4.1
 tensorflow-estimator==2.4.0
 h5py==2.10.0
 grpcio==1.32.0
-opencv-contrib-python==4.5.1.48
+opencv-python-headless==4.5.1.48
