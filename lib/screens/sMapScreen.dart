@@ -1,12 +1,16 @@
 import 'dart:async';
 
+import 'package:detectas/screens/menuScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:http/http.dart';
+import 'package:get/get.dart';
 import '../src/blocs/appBloc.dart';
 import '../src/models/place.dart';
 import 'package:provider/provider.dart';
 import 'package:after_init/after_init.dart';
+import 'menuScreen.dart';
 
 class SpecialistsMap extends StatefulWidget {
   SpecialistsMap({Key key}) : super(key: key);
@@ -70,6 +74,16 @@ class _SpecialistsMapState extends State<SpecialistsMap>
     final applicationBloc = Provider.of<ApplicationBloc>(context);
     return Scaffold(
         appBar: AppBar(
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.home_outlined),
+              tooltip: 'Next page',
+              onPressed: () {
+                Get.to(HomeScreen());
+              },
+            ),
+          ],
+          backgroundColor: Colors.transparent,
           title: Text('Resources'),
         ),
         body: (applicationBloc.currentLocation == null)
