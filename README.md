@@ -24,3 +24,7 @@ This model is hosted on azure and for more information go to the folder detectas
 ## FAQ
 ### What is autism
 Autism, or autism spectrum disorder (ASD), refers to a broad range of conditions characterized by challenges with social skills, repetitive behaviors, speech and nonverbal communication.
+
+## Links
+Devpost - https://devpost.com/software/detectas   
+Out pitching presentation - http://bit.ly/DetectAS  
