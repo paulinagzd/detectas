@@ -124,7 +124,7 @@ class _CameraScreenState extends State<CameraScreen> {
             ),
             child: ListView(
               children: <Widget>[
-                Center(child: Text("Capture an image or choose one from gallery")),
+                done ? Center(child: Text("Image processed")) : Center(child: Text("Capture an image or choose one from gallery")),
                 (done
                     ? Container()
                     : Row(
@@ -140,16 +140,16 @@ class _CameraScreenState extends State<CameraScreen> {
                         }),
                   ],
                 )),
-                predictedClass == -1
-                    ? Container()
-                    : Text(
-                  predictedClass.toString(),
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
+//                predictedClass == -1
+//                    ? Container()
+//                    : Text(
+//                  predictedClass.toString(),
+//                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+//                ),
                 Text(description),
                 RaisedButton(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                  child: Text(predictedClass == -1 ? "Predict results without taking image" : "Next"),
+                  child: Text(predictedClass == -1 ? "Predict results without taking image" : "Next", style: TextStyle(fontSize: 16),),
                   textColor: Colors.white,
                   color: Theme
                       .of(context)

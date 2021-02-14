@@ -19,8 +19,7 @@ class SpecialistsMap extends StatefulWidget {
   _SpecialistsMapState createState() => _SpecialistsMapState();
 }
 
-class _SpecialistsMapState extends State<SpecialistsMap>
-    with AfterInitMixin<SpecialistsMap> {
+class _SpecialistsMapState extends State<SpecialistsMap> with AfterInitMixin<SpecialistsMap> {
   Completer<GoogleMapController> _mapController = Completer();
   final _locationController = TextEditingController();
 
@@ -33,8 +32,7 @@ class _SpecialistsMapState extends State<SpecialistsMap>
   void didInitState() {
     // No need to call super.didInitState().
     // setState() is not required because build() will automatically be called by Flutter.
-    final applicationBloc =
-        Provider.of<ApplicationBloc>(context, listen: false);
+    final applicationBloc = Provider.of<ApplicationBloc>(context, listen: false);
 
     setIcons(applicationBloc, context);
 
@@ -55,15 +53,13 @@ class _SpecialistsMapState extends State<SpecialistsMap>
 
   setIcons(ApplicationBloc applicationBloc, BuildContext context) async {
     ImageConfiguration configuration = createLocalImageConfiguration(context);
-    var locationIcon = await BitmapDescriptor.fromAssetImage(
-        configuration, 'assets/location.png');
+    var locationIcon = await BitmapDescriptor.fromAssetImage(configuration, 'assets/location.png');
     applicationBloc.setLocationIcon(locationIcon);
   }
 
   @override
   void dispose() {
-    final applicationBloc =
-        Provider.of<ApplicationBloc>(context, listen: false);
+    final applicationBloc = Provider.of<ApplicationBloc>(context, listen: false);
     applicationBloc.dispose();
     _locationController.dispose();
     super.dispose();
@@ -114,9 +110,7 @@ class _SpecialistsMapState extends State<SpecialistsMap>
                           mapType: MapType.normal,
                           myLocationEnabled: true,
                           initialCameraPosition: CameraPosition(
-                            target: LatLng(
-                                applicationBloc.currentLocation.latitude,
-                                applicationBloc.currentLocation.longitude),
+                            target: LatLng(applicationBloc.currentLocation.latitude, applicationBloc.currentLocation.longitude),
                             zoom: 14,
                           ),
                           onMapCreated: (GoogleMapController controller) {
@@ -125,14 +119,7 @@ class _SpecialistsMapState extends State<SpecialistsMap>
                           markers: Set<Marker>.of(applicationBloc.markers),
                         ),
                       ),
-                      if (applicationBloc.searchResults != null &&
-                          applicationBloc.searchResults.length != 0)
-                        Container(
-                            height: 300.0,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(.6),
-                                backgroundBlendMode: BlendMode.darken)),
+                      if (applicationBloc.searchResults != null && applicationBloc.searchResults.length != 0) Container(height: 300.0, width: double.infinity, decoration: BoxDecoration(color: Colors.black.withOpacity(.6), backgroundBlendMode: BlendMode.darken)),
                       if (applicationBloc.searchResults != null)
                         Container(
                           height: 300.0,
@@ -141,14 +128,11 @@ class _SpecialistsMapState extends State<SpecialistsMap>
                               itemBuilder: (context, index) {
                                 return ListTile(
                                   title: Text(
-                                    applicationBloc
-                                        .searchResults[index].description,
+                                    applicationBloc.searchResults[index].description,
                                     style: TextStyle(color: Colors.white),
                                   ),
                                   onTap: () {
-                                    applicationBloc.setSelectedLocation(
-                                        applicationBloc
-                                            .searchResults[index].placeId);
+                                    applicationBloc.setSelectedLocation(applicationBloc.searchResults[index].placeId);
                                   },
                                 );
                               }),
@@ -160,9 +144,7 @@ class _SpecialistsMapState extends State<SpecialistsMap>
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text('Find Nearest',
-                        style: TextStyle(
-                            fontSize: 25.0, fontWeight: FontWeight.bold)),
+                    child: Text('Find Nearest', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -171,48 +153,15 @@ class _SpecialistsMapState extends State<SpecialistsMap>
                       children: [
                         FilterChip(
                           label: Text('Pediatricians'),
-                          onSelected: (val) => applicationBloc.togglePlaceType(
-                              'developmental+pediatrician', val, true),
-                          selected: applicationBloc.placeType ==
-                              'developmental+pediatrician',
+                          onSelected: (val) => applicationBloc.togglePlaceType('developmental+pediatrician', val, true),
+                          selected: applicationBloc.placeType == 'developmental+pediatrician',
                           selectedColor: Colors.blue,
                         ),
-                        FilterChip(
-                            label: Text('Psychiatrists'),
-                            onSelected: (val) => applicationBloc
-                                .togglePlaceType('psychiatrist', val, true),
-                            selected:
-                                applicationBloc.placeType == 'psychiatrist',
-                            selectedColor: Colors.blue),
-                        FilterChip(
-                            label: Text('Special Ed'),
-                            onSelected: (val) =>
-                                applicationBloc.togglePlaceType(
-                                    'special+education+school', val, true),
-                            selected: applicationBloc.placeType ==
-                                'special+education+school',
-                            selectedColor: Colors.blue),
-                        FilterChip(
-                            label: Text('Physiotherapy'),
-                            onSelected: (val) => applicationBloc
-                                .togglePlaceType('physiotherapist', val, false),
-                            selected:
-                                applicationBloc.placeType == 'physiotherapist',
-                            selectedColor: Colors.blue),
-                        FilterChip(
-                            label: Text('Speech Therapy'),
-                            onSelected: (val) => applicationBloc
-                                .togglePlaceType('speech+therapist', val, true),
-                            selected:
-                                applicationBloc.placeType == 'speech+therapist',
-                            selectedColor: Colors.blue),
-                        FilterChip(
-                            label: Text('Audiologists'),
-                            onSelected: (val) => applicationBloc
-                                .togglePlaceType('audiologist', val, true),
-                            selected:
-                                applicationBloc.placeType == 'audiologist',
-                            selectedColor: Colors.blue),
+                        FilterChip(label: Text('Psychiatrists'), onSelected: (val) => applicationBloc.togglePlaceType('psychiatrist', val, true), selected: applicationBloc.placeType == 'psychiatrist', selectedColor: Colors.blue),
+                        FilterChip(label: Text('Special Ed'), onSelected: (val) => applicationBloc.togglePlaceType('special+education+school', val, true), selected: applicationBloc.placeType == 'special+education+school', selectedColor: Colors.blue),
+                        FilterChip(label: Text('Physiotherapy'), onSelected: (val) => applicationBloc.togglePlaceType('physiotherapist', val, false), selected: applicationBloc.placeType == 'physiotherapist', selectedColor: Colors.blue),
+                        FilterChip(label: Text('Speech Therapy'), onSelected: (val) => applicationBloc.togglePlaceType('speech+therapist', val, true), selected: applicationBloc.placeType == 'speech+therapist', selectedColor: Colors.blue),
+                        FilterChip(label: Text('Audiologists'), onSelected: (val) => applicationBloc.togglePlaceType('audiologist', val, true), selected: applicationBloc.placeType == 'audiologist', selectedColor: Colors.blue),
                       ],
                     ),
                   )
@@ -224,10 +173,7 @@ class _SpecialistsMapState extends State<SpecialistsMap>
     final GoogleMapController controller = await _mapController.future;
     controller.animateCamera(
       CameraUpdate.newCameraPosition(
-        CameraPosition(
-            target: LatLng(
-                place.geometry.location.lat, place.geometry.location.lng),
-            zoom: 14.0),
+        CameraPosition(target: LatLng(place.geometry.location.lat, place.geometry.location.lng), zoom: 14.0),
       ),
     );
   }

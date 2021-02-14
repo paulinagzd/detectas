@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         accentColor: Colors.grey,
         appBarTheme: AppBarTheme(
-          color: Color(0xFFCFD8DC),
+          color: Color(0xFFf7f8fb),
           brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black),
           textTheme: TextTheme(
