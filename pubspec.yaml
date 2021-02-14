@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   flutter_animation_progress_bar: ^1.0.6
+  after_init: ^0.1.2
 
   get:
   flutter:
@@ -30,6 +31,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+  provider: ^4.3.3
+  geolocator: ^6.2.0
+  http: ^0.12.2
+  google_maps_flutter: ^1.2.0
 
 dev_dependencies:
   flutter_test:
