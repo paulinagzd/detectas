@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'cameraScreen.dart';
 
 class NextStepsPage extends StatelessWidget {
+
+  List<int> selectedAnswersList;
+  NextStepsPage(this.selectedAnswersList);
+
   @override
   Widget build(BuildContext context) {
     final circle = Hero(
@@ -53,7 +57,7 @@ class NextStepsPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CameraScreen()),
+                    MaterialPageRoute(builder: (context) => CameraScreen(selectedAnswersList)),
                   );
                 },
                 child: Text('Take photo', style: TextStyle(fontSize: 28.0)),
@@ -84,7 +88,8 @@ class NextStepsPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           extendBodyBehindAppBar: true,
           appBar: AppBar(
-            // Fluttter show the back button automatically
+            // Flutter show the back button automatically
+            iconTheme: IconThemeData(color: Colors.black),
             backgroundColor: Colors.transparent,
             elevation: 0,
           ),

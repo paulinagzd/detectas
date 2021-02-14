@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'quizProcess.dart';
 
 class IntroQuizRoute extends StatelessWidget {
@@ -44,9 +45,10 @@ class IntroQuizRoute extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white, // background
-                  onPrimary: Colors.blue, // foreground
+                  onPrimary: Theme.of(context).primaryColor, // foreground
                 ),
                 onPressed: () {
+                  Get.reset();
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => QuizPage()),

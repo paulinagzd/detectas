@@ -39,6 +39,8 @@ class QuestionController extends GetxController
   int _numOftrueIndex = 0;
   int get numOftrueIndex => this._numOftrueIndex;
 
+  List<int> selectedAnswersList = [];
+
   // called immediately after the widget is allocated memory
   @override
   void onInit() {
@@ -61,11 +63,13 @@ class QuestionController extends GetxController
 
     if (_trueIndex == _selectedAnswer) _numOftrueIndex++;
 
+    selectedAnswersList.add(selectedIndex);
+
     // It will stop the counter
     update();
 
     // Once user select an ans after 3s it will go to the next qn
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(milliseconds: 50), () {
       nextQuestion();
     });
   }
@@ -76,7 +80,7 @@ class QuestionController extends GetxController
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);
     } else {
-      Get.to(NextStepsPage());
+      Get.to(NextStepsPage(selectedAnswersList));
     }
   }
 

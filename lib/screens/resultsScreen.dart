@@ -6,6 +6,12 @@ import 'package:provider/provider.dart';
 import 'sMapScreen.dart';
 
 class Results extends StatelessWidget {
+
+  List<int> selectedAnswersList;
+  int predictedClass;
+
+  Results(this.selectedAnswersList, this.predictedClass);
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(

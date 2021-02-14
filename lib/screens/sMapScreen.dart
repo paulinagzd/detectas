@@ -79,11 +79,12 @@ class _SpecialistsMapState extends State<SpecialistsMap>
               icon: const Icon(Icons.home_outlined),
               tooltip: 'Next page',
               onPressed: () {
-                Get.to(HomeScreen());
+                // TODO: Go back to main scren
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
+                // Navigator.popUntil(context, (route) => false);
               },
             ),
           ],
-          backgroundColor: Colors.transparent,
           title: Text('Resources'),
         ),
         body: (applicationBloc.currentLocation == null)
