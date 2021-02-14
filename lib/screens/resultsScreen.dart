@@ -1,3 +1,4 @@
+import 'package:detectas/utilities/get_autism_index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../src/blocs/appBloc.dart';
@@ -22,6 +23,7 @@ class Results extends StatelessWidget {
 //    );
 
     double probability = 0.0;
+    bool showRecommendations = haveAutisticSigns(selectedAnswersList, predictedClass);
 
     final circle = Hero(
       tag: 'hero',
@@ -45,7 +47,7 @@ class Results extends StatelessWidget {
     final description = Padding(
       padding: EdgeInsets.all(12.0),
       child: Text(
-        "Candidate has " + probability.toString() + " probability of being autistic.",
+        showRecommendations ? "Candidate show some signs of autism. You should go see a specialist" : "Candidate does not show any signs of autism.",
         style: TextStyle(fontSize: 16.0, color: Colors.black54),
       ),
     );
@@ -97,7 +99,7 @@ class Results extends StatelessWidget {
       padding: EdgeInsets.all(12.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[circle, welcome, description, buttonRow],
+        children: <Widget>[circle, welcome, description, showRecommendations ? buttonRow : Container()],
       ),
     );
 
