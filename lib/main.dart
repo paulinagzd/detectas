@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'screens/menuScreen.dart';
 
+import 'pick_image.dart';
+
 void main() {
   runApp(MyApp());
 }

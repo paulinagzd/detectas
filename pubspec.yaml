@@ -27,13 +27,17 @@ dependencies:
   get:
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^8.5.0
+  http: ^0.12.2
+  image_picker:
+  http_parser: ^3.1.4
+  progress_dialog: ^1.2.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
   provider: ^4.3.3
   geolocator: ^6.2.0
-  http: ^0.12.2
   google_maps_flutter: ^1.2.0
 
 dev_dependencies:

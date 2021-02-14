@@ -26,6 +26,16 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+
+	<key>NSCameraUsageDescription</key>
+    <string>Capture reference pic for homework</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Record Reference audios with homework</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>To save the downloaded images</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Upload reference pic with homework</string>
+
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
