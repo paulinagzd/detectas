@@ -56,7 +56,7 @@ const List m_chat_questions = [
   {
     "id": 8,
     "question":
-        "Does your child show you things by bringing them to you or holding them up for you to see  –not to get help, but just to share?",
+        "Does your child show you things by bringing them to you or holding them up for you to see – not to get help, but just to share?",
     "options": answers,
   },
   {
@@ -72,7 +72,7 @@ const List m_chat_questions = [
   },
   {
     "id": 11,
-    "question": "Does your child get upset by everyday noises? ",
+    "question": "Does your child get upset by everyday noises?",
     "options": answers,
   },
   {
@@ -116,7 +116,7 @@ const List m_chat_questions = [
   },
   {
     "id": 19,
-    "question": "Does your child like movement activities? ?",
+    "question": "Does your child like movement activities?",
     "options": answers,
   },
 ];

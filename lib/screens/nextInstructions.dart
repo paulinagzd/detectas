@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'cameraScreen.dart';
 
 class NextStepsPage extends StatelessWidget {
+  List<int> selectedAnswersList;
+  NextStepsPage(this.selectedAnswersList);
+
   @override
   Widget build(BuildContext context) {
     final circle = Hero(
@@ -9,8 +12,9 @@ class NextStepsPage extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Container(
+          height: 200,
           alignment: Alignment.center,
-          child: new Image.asset('assets/images/after.png'),
+          child: new Image.asset('assets/images/selfie.png'),
         ),
       ),
     );
@@ -18,7 +22,7 @@ class NextStepsPage extends StatelessWidget {
     final welcome = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Next steps!',
+        'Next steps',
         style: TextStyle(fontSize: 28.0, color: Colors.black),
       ),
     );
@@ -26,7 +30,7 @@ class NextStepsPage extends StatelessWidget {
     final description = Padding(
       padding: EdgeInsets.all(12.0),
       child: Text(
-        "Now that the quiz has been answered, a picture of the candidate's face is required to continue.",
+        "Now that the quiz has been answered, a picture of the candidate's face is required to continue. It will identify possible autistic traits on children from 2 to 8 years old.",
         style: TextStyle(fontSize: 16.0, color: Colors.black54),
       ),
     );
@@ -53,7 +57,9 @@ class NextStepsPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CameraScreen()),
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            CameraScreen(selectedAnswersList)),
                   );
                 },
                 child: Text('Take photo', style: TextStyle(fontSize: 28.0)),
@@ -66,9 +72,8 @@ class NextStepsPage extends StatelessWidget {
 
     final body = Container(
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.all(12.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      padding: EdgeInsets.all(0.0),
+      child: ListView(
         children: <Widget>[circle, welcome, description, buttonRow],
       ),
     );
@@ -84,7 +89,8 @@ class NextStepsPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           extendBodyBehindAppBar: true,
           appBar: AppBar(
-            // Fluttter show the back button automatically
+            // Flutter show the back button automatically
+            iconTheme: IconThemeData(color: Colors.black),
             backgroundColor: Colors.transparent,
             elevation: 0,
           ),

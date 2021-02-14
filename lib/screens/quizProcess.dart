@@ -5,11 +5,11 @@ class QuizPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: <Widget>[
       Scaffold(
-        // extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
+        extendBodyBehindAppBar: true,
+         appBar: AppBar(
+           backgroundColor: Colors.transparent,
+           elevation: 0,
+         ),
         body: Body(),
       )
     ]);
